@@ -26,7 +26,7 @@ gulp.task('html', function() {
 
 // JavasScript build task
 gulp.task('scripts', function() {
-	return browserify('.site/js/main.js')
+	return browserify('site/js/main.js')
 		.bundle()
 		.pipe(source('app.js'))
 		.pipe(buffer())
