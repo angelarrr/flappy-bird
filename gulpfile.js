@@ -43,7 +43,7 @@ gulp.task('styles', function() {
 
 // watch task
 gulp.task('watch', function() {
-	gulp.watch('site/js/*.js', ['jshint']);
+	gulp.watch('site/js/*.js', ['scripts']);
 	gulp.watch('site/scss/**/*.scss', ['sass']);
 });
 
