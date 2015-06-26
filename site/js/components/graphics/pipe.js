@@ -3,8 +3,6 @@ var PipeGraphicsComponent = function(entity) {
 };
 
 PipeGraphicsComponent.prototype.draw = function(context) {
-	context.rect(100, 100, 100,100);
-	context.fill();
 	console.log("Drawing a pipe");
 };
 

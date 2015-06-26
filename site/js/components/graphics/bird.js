@@ -3,9 +3,13 @@ var BirdGraphicsComponent = function(entity) {
 };
 
 BirdGraphicsComponent.prototype.draw = function(context) {
+	context.save();
+	context.translate(position.x, position.y);
+	context.scale(size, size);
 	context.beginPath();
-	context.arc(50, 50, 10, 0, 2 * Math.PI);
+	context.arc(0, 0, 1, 0, 2 * Math.PI);
 	context.fill();
+	context.restore();
 	console.log("Drawing a bird");
 };
 
