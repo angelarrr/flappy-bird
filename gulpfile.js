@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 
+var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var imagemin = require('gulp-imagemin');
 var browserify = require('browserify');
@@ -9,6 +10,12 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
+
+gulp.task('jshint', function() {
+	return gulp.src('site/js/**')
+		.pipe(jshint())
+		.pipe(jshint.reporter('default'));
+});
 
 // compile sass task
 gulp.task('sass', function() {
@@ -43,8 +50,8 @@ gulp.task('styles', function() {
 
 // watch task
 gulp.task('watch', function() {
-	gulp.watch('site/js/*.js', ['scripts']);
-	gulp.watch('site/scss/**/*.scss', ['sass']);
+	gulp.watch('site/js/**', ['scripts']);
+	// gulp.watch('site/scss/**/*.scss', ['sass']);
 });
 
 // default task
