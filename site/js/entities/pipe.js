@@ -6,7 +6,7 @@ var Pipe = function() {
 
 	var physics = new physicsComponent.PhysicsComponent(this);
 		physics.position.y = 0;
-		physics.acceleration.x = -0.5;
+		physics.acceleration.x = -0.25;
 
 	var graphics = new graphicsComponent.PipeGraphicsComponent(this);
 	this.components = {
