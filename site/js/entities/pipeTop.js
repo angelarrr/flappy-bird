@@ -11,7 +11,7 @@ var PipeTop = function() {
 	var physics = new physicsComponent.PhysicsComponent(this);
 		physics.position.x = 0.8;
 		physics.position.y = 0.6;
-		physics.acceleration.x = -0.25;
+		physics.acceleration.x = -0.15;
 
 	var graphics = new graphicsComponent.PipeGraphicsComponent(this);
 	this.components = {

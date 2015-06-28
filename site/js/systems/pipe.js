@@ -10,8 +10,7 @@ PipeSystem.prototype.run = function() {
 };
 
 PipeSystem.prototype.tick = function(){
-	var create = this.entities;
-	create.push(new pipeTop.pipeTop(), new pipeBottom.PipeBottom());
+	this.entities.push(new pipeTop.PipeTop(), new pipeBottom.PipeBottom());
 
 	console.log("creating pipes");
 };
