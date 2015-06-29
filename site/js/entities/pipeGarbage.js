@@ -25,7 +25,7 @@ var PipeGarbage = function() {
 };
 
 PipeGarbage.prototype.onCollision = function(entity) {
-	// console.log("garbage can collided with entity:", entity);
+	console.log("garbage can collided with entity:", entity);
 };
 
 exports.PipeGarbage = PipeGarbage;

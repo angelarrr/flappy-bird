@@ -51,11 +51,6 @@ CircleCollisionComponent.prototype.collideRect = function(entity) {
 	// size of the rectangle
 	var sizeB = entity.components.collision.size;
 
-	// find the closest point in the rectangle to the circle
-	// find closest point on x-axis
-	// limit position of circle to be within left and right edges of rectangle
-	// find closest pint on y-axis
-	// limit y position to be within top and bottom of rectangle
 	var closest = {
 		x: clamp(positionA.x,
 			positionB.x - sizeB.x/2,
@@ -65,7 +60,6 @@ CircleCollisionComponent.prototype.collideRect = function(entity) {
 			positionB.y + sizeB.y/2)
 	};
 
-	// work out distance between center of circle and the closest point and see whether this is less than the radius
 	var radiusA = this.radius;
 
 	var diff = {x: positionA.x - closest.x, y: positionA.y - closest.y};
