@@ -9,7 +9,7 @@ var PipeTop = function() {
 	};
 
 	var physics = new physicsComponent.PhysicsComponent(this);
-		physics.position.x = 0.8;
+		physics.position.x = 1;
 		physics.position.y = 0.6;
 		physics.acceleration.x = -0.15;
 
