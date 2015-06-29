@@ -8,18 +8,18 @@ var pipeTop = require('./entities/pipeTop');
 var pipeBottom = require('./entities/pipeBottom');
 
 var FlappyBird = function() {
-	this.entities = [new bird.Bird()];
+	this.entities = [new bird.Bird(), new pipeTop.PipeTop(), new pipeBottom.PipeBottom()];
 	this.graphics = new graphicsSystem.GraphicsSystem(this.entities);
 	this.physics = new physicsSystem.PhysicsSystem(this.entities);
 	this.inputs = new inputSystem.InputSystem(this.entities);
-	this.pipes = new pipeSystem.PipeSystem(this.entities);
+	// this.pipes = new pipeSystem.PipeSystem(this.entities);
 };
 
 FlappyBird.prototype.run = function() {
 	this.graphics.run();
 	this.physics.run();
 	this.inputs.run();
-	this.pipes.run();
+	// this.pipes.run();
 };
 
 exports.FlappyBird = FlappyBird;

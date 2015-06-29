@@ -1,5 +1,6 @@
 var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
+var collisionComponent = require("../components/collision/rect");
 
 var PipeTop = function() {
 
@@ -14,12 +15,18 @@ var PipeTop = function() {
 		physics.acceleration.x = -0.15;
 
 	var graphics = new graphicsComponent.PipeGraphicsComponent(this);
+	var collision = new collisionComponent.RectCollisionComponent(this, this.size);
+	collision.onCollision = this.onCollision.bind(this);
+
 	this.components = {
 		physics: physics,
-		graphics: graphics
+		graphics: graphics,
+		collision: collision
 	};
+};
 
-	console.log("Creating top pipe entity");
+PipeTop.prototype.onCollision = function(entity) {
+	console.log("Pipe top collided with entity:", entity);
 };
 
 exports.PipeTop = PipeTop;

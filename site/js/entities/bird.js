@@ -1,12 +1,11 @@
-var graphicsComponent = require("../components/graphics/bird");
 var physicsComponent = require("../components/physics/physics");
+var graphicsComponent = require("../components/graphics/bird");
 var collisionComponent = require("../components/collision/circle");
 
 var Bird = function() {
-	console.log("Creating Bird entity");
 	var physics = new physicsComponent.PhysicsComponent(this);
-		physics.position.y = 0.5;
-		physics.acceleration.y = -2;
+	physics.position.y = 0.5;
+	physics.acceleration.y = -2;
 
 	var graphics = new graphicsComponent.BirdGraphicsComponent(this);
 	var collision = new collisionComponent.CircleCollisionComponent(this, 0.02);
