@@ -1,20 +1,21 @@
-var graphicsComponent = require("../components/graphics/rect");
+var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
 var Ceiling = function() {
-
-	this.size = {
-		x: 1,
-		y: 0.02
+	this.color = "white";
+	
+	var size = {
+		x: (document.getElementById('main-canvas').width),
+		y: 0.01
 	};
 
 	var physics = new physicsComponent.PhysicsComponent(this);
 	physics.position.x = 0;
 	physics.position.y = 1;
 
-	var graphics = new graphicsComponent.RectGraphicsComponent(this, this.size);
-	var collision = new collisionComponent.RectCollisionComponent(this, this.size);
+	var graphics = new graphicsComponent.PipeGraphicsComponent(this, size);
+	var collision = new collisionComponent.RectCollisionComponent(this, size);
 	// collision.onCollision = this.onCollision.bind(this);
 
 	this.components = {

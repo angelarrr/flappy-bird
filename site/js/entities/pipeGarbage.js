@@ -1,20 +1,20 @@
-var graphicsComponent = require("../components/graphics/rect");
+var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
 var PipeGarbage = function() {
 	this.color = "white";
-	this.size = {
+	var size = {
 		x: 0.01,
-		y: 1
+		y: (document.getElementById('main-canvas').height)
 	};
 
 	var physics = new physicsComponent.PhysicsComponent(this);
 	physics.position.x = -(document.getElementById('main-canvas').width/200);
 	physics.position.y = 0;
 
-	var graphics = new graphicsComponent.RectGraphicsComponent(this, this.size);
-	var collision = new collisionComponent.RectCollisionComponent(this, this.size);
+	var graphics = new graphicsComponent.PipeGraphicsComponent(this, size);
+	var collision = new collisionComponent.RectCollisionComponent(this, size);
 	// collision.onCollision = this.onCollision.bind(this);
 
 	this.components = {

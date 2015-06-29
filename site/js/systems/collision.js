@@ -51,7 +51,7 @@ CollisionSystem.prototype.tick = function() {
 				entityB.components.collision.onCollision(entityA);
 				// take pipes off
 				if (entityB instanceof bird.Bird) {
-					this.entities.splice(3, this.entities.length - 3);
+					this.entities.splice(4, this.entities.length - 4);
 				}
 			}
 		}

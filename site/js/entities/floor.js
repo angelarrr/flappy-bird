@@ -1,4 +1,4 @@
-var graphicsComponent = require("../components/graphics/rect");
+var graphicsComponent = require("../components/graphics/pipe");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
@@ -13,7 +13,7 @@ var Floor = function() {
 	physics.position.x = -(document.getElementById('main-canvas').width/2);
 	physics.position.y = 0;
 
-	var graphics = new graphicsComponent.RectGraphicsComponent(this, this.size);
+	var graphics = new graphicsComponent.PipeGraphicsComponent(this, this.size);
 	var collision = new collisionComponent.RectCollisionComponent(this, this.size);
 	// collision.onCollision = this.onCollision.bind(this);
 
