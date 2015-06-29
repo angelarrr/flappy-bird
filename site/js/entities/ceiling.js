@@ -3,10 +3,10 @@ var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
 var Ceiling = function() {
-	this.color = "blue";
+
 	this.size = {
 		x: 1,
-		y: 0.01
+		y: 0.02
 	};
 
 	var physics = new physicsComponent.PhysicsComponent(this);
@@ -25,7 +25,7 @@ var Ceiling = function() {
 };
 
 Ceiling.prototype.onCollision = function(entity) {
-	console.log("ceiling collided with entity:", entity);
+	// console.log("ceiling collided with entity:", entity);
 };
 
 exports.Ceiling = Ceiling;

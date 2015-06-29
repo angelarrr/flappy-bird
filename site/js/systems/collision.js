@@ -1,5 +1,11 @@
+var bird = require("../entities/bird");
+
 var CollisionSystem = function(entities) {
 	this.entities = entities;
+};
+
+CollisionSystem.prototype.run = function() {
+	window.setInterval(this.tick.bind(this), 1000/60);
 };
 
 // check for collisions
@@ -24,10 +30,18 @@ CollisionSystem.prototype.tick = function() {
 
 			if (entityA.components.collision.onCollision) {
 				entityA.components.collision.onCollision(entityB);
+
+				if (entityA instanceof bird.Bird) {
+					this.entities.splice(3, this.entities.length - 3);
+				}
 			}
 
 			if (entityB.components.collision.onCollision) {
 				entityB.components.collision.onCollision(entityA);
+
+				if (entityB instanceof bird.Bird) {
+					this.entities.splice(3, this.entities.length - 3);
+				}
 			}
 		}
 	}

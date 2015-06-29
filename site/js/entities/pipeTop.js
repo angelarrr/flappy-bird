@@ -12,7 +12,7 @@ var PipeTop = function() {
 	var physics = new physicsComponent.PhysicsComponent(this);
 		physics.position.x = 1.5;
 		physics.position.y = 0.6;
-		physics.velocity.x = -0.25;
+		physics.velocity.x = -0.40;
 
 	var graphics = new graphicsComponent.RectGraphicsComponent(this);
 	var collision = new collisionComponent.RectCollisionComponent(this, this.size);

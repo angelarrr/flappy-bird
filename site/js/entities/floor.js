@@ -25,7 +25,7 @@ var Floor = function() {
 };
 
 Floor.prototype.onCollision = function(entity) {
-	console.log("floor collided with entity:", entity);
+	// console.log("floor collided with entity:", entity);
 };
 
 exports.Floor = Floor;
