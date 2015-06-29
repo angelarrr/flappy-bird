@@ -3,7 +3,7 @@ var pipeBottom = require('../entities/pipeBottom');
 
 var PipeSystem = function(entities) {
 	this.entities = entities;
-}
+};
 
 PipeSystem.prototype.run = function() {
 	window.setInterval(this.tick.bind(this), 2000);
