@@ -14,6 +14,7 @@ CircleCollisionComponent.prototype.collidesWith = function(entity) {
 	return false;
 };
 
+// circle-circle collision
 CircleCollisionComponent.prototype.collideCircle = function(entity) {
 	// get two positions from physics components of the entities
 	var positionA = this.entity.components.physics.position;
@@ -32,6 +33,7 @@ CircleCollisionComponent.prototype.collideCircle = function(entity) {
 	return distanceSquared < radiusSum * radiusSum;
 };
 
+// circle-rectangle collision
 CircleCollisionComponent.prototype.collideRect = function(entity) {
 	var clamp = function(value, low, high) {
 		if (value < low) {
@@ -50,13 +52,15 @@ CircleCollisionComponent.prototype.collideRect = function(entity) {
 	var sizeB = entity.components.collision.size;
 
 	// find the closest point in the rectangle to the circle
-	// to find closest point on x-axis, limit position of the circle to be within left and right edges of the rectangle
-	// to find closest pint on y-axis, limit y position to be within top and bottom of the rectangle
+	// find closest point on x-axis, limit position of the circle to be within left and right edges of the rectangle
+	// find closest pint on y-axis, limit y position to be within top and bottom of the rectangle
 	var closest = {
-		x: clamp(positionA.x, positionB.x - sizeB.x / 2,
-				positionB.x + sizeB.x / 2),
-		y: clamp(positionA.y, positionB.y - sizeB.y / 2,
-				positionB.y + sizeB.y / 2)
+		x: clamp(positionA.x,
+			positionB.x - sizeB.x/2,
+			positionB.x + sizeB.x/2),
+		y: clamp(positionA.y, 
+			positionB.y - sizeB.y/2,
+			positionB.y + sizeB.y/2)
 	};
 
 	// work out distance between center of circle and the closest point and see whether this is less than the radius
