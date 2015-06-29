@@ -1,4 +1,5 @@
 var bird = require("../entities/bird");
+var pipeGarbage = require("../entities/pipeGarbage");
 
 var CollisionSystem = function(entities) {
 	this.entities = entities;
@@ -14,12 +15,17 @@ CollisionSystem.prototype.tick = function() {
 	// make sure they both have collision components
 	for (var i=0; i<this.entities.length; i++) {
 		var entityA = this.entities[i];
+
+		// continue if no collision component
 		if (!'collision' in entityA.components) {
 			continue;
 		}
+
 		// each pair is only checked once
 		for (var j=i+1; j<this.entities.length; j++) {
 			var entityB = this.entities[j];
+
+			// continue if no collision component
 			if (!'collision' in entityB.components) {
 				continue;
 			}
@@ -30,15 +36,20 @@ CollisionSystem.prototype.tick = function() {
 
 			if (entityA.components.collision.onCollision) {
 				entityA.components.collision.onCollision(entityB);
-
+				// take pipes off
 				if (entityA instanceof bird.Bird) {
-					this.entities.splice(3, this.entities.length - 3);
+					this.entities.splice(4, this.entities.length - 4);
 				}
+
+				if (entityA instanceof pipeGarbage.PipeGarbage) {
+					this.entities.splice(4,2);
+				}
+
 			}
 
 			if (entityB.components.collision.onCollision) {
 				entityB.components.collision.onCollision(entityA);
-
+				// take pipes off
 				if (entityB instanceof bird.Bird) {
 					this.entities.splice(3, this.entities.length - 3);
 				}

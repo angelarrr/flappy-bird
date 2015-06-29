@@ -8,8 +8,10 @@ RectGraphicsComponent.prototype.draw = function(context) {
 	var color = this.entity.color;
 
 	context.save();
+	context.beginPath();
 	context.fillStyle = color;
 	context.fillRect(position.x, position.y, size.x, size.y);
+	context.closePath();
 	context.restore();
 };
 
