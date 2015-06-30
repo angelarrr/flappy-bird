@@ -9,7 +9,7 @@ BirdGraphicsComponent.prototype.draw = function(context) {
 	context.translate(position.x, position.y);
 	var img = new Image();
 	img.src = "img/bird.png";
-	context.drawImage(img, 0, 0, 0.08, 0.08);
+	context.drawImage(img, 0, 0, 0.07, 0.07);
 	// context.beginPath();
 	// context.arc(0, 0, 0.02, 0, 2 * Math.PI);
 	// context.fillStyle = "yellow";

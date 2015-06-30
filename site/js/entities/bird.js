@@ -8,7 +8,7 @@ var Bird = function() {
 	physics.acceleration.y = -2;
 
 	var graphics = new graphicsComponent.BirdGraphicsComponent(this);
-	var collision = new collisionComponent.CircleCollisionComponent(this, 0.02);
+	var collision = new collisionComponent.CircleCollisionComponent(this, 0.035);
 	collision.onCollision = this.onCollision.bind(this);
 
 	this.components = {
