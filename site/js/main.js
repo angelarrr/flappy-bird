@@ -9,5 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
 		app.run();
 		startDiv.style.visibility = "hidden";
 	});
+
+	startButton.addEventListener('touchstart', function() {
+		app.run();
+		startDiv.style.visibility = "hidden";
+	});
 	
 });
