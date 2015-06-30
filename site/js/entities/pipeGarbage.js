@@ -15,7 +15,7 @@ var PipeGarbage = function() {
 
 	var graphics = new graphicsComponent.PipeGraphicsComponent(this, size);
 	var collision = new collisionComponent.RectCollisionComponent(this, size);
-	// collision.onCollision = this.onCollision.bind(this);
+	collision.onCollision = this.onCollision.bind(this);
 
 	this.components = {
 		physics: physics,
@@ -25,7 +25,7 @@ var PipeGarbage = function() {
 };
 
 PipeGarbage.prototype.onCollision = function(entity) {
-	console.log("garbage can collided with entity:", entity);
+	// console.log("garbage can collided with entity:", entity);
 };
 
 exports.PipeGarbage = PipeGarbage;
