@@ -3,7 +3,7 @@ var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
 var Ceiling = function() {
-	this.color = "white";
+	this.color = "#87CEFA";
 	
 	var size = {
 		x: (document.getElementById('main-canvas').width),

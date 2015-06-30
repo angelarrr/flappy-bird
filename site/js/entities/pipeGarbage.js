@@ -11,7 +11,7 @@ var PipeGarbage = function() {
 
 	var physics = new physicsComponent.PhysicsComponent(this);
 	physics.position.x = -(document.getElementById('main-canvas').width/200);
-	physics.position.y = 0;
+	physics.position.y = 0.02;
 
 	var graphics = new graphicsComponent.PipeGraphicsComponent(this, size);
 	var collision = new collisionComponent.RectCollisionComponent(this, size);
