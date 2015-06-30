@@ -4,17 +4,18 @@ var collisionComponent = require("../components/collision/rect");
 
 var Floor = function() {
 	this.color = "brown";
-	this.size = {
+
+	var size = {
 		x: (document.getElementById('main-canvas').width),
 		y: 0.01
 	};
 
 	var physics = new physicsComponent.PhysicsComponent(this);
-	physics.position.x = -(document.getElementById('main-canvas').width/2);
+	physics.position.x = 0;
 	physics.position.y = 0;
 
-	var graphics = new graphicsComponent.PipeGraphicsComponent(this, this.size);
-	var collision = new collisionComponent.RectCollisionComponent(this, this.size);
+	var graphics = new graphicsComponent.PipeGraphicsComponent(this, size);
+	var collision = new collisionComponent.RectCollisionComponent(this, size);
 	// collision.onCollision = this.onCollision.bind(this);
 
 	this.components = {
