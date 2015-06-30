@@ -446,12 +446,30 @@ div#overlay {
 
 div#game-start {
 	z-index: 2;
-	top: 50%;
-	left: 45%;
+	top: 45%;
+	left: 30%;
+	width: 40%;
 	position: absolute;
 }
 
 h1 {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	margin: 1em;
+}
+
+#start {
+	width: 50%;
+	left: 25%;
+	text-shadow: none;
+	border: none;
+	background-color: blue;
+	font-size: 2em;
+	padding: 10px;
+	border-radius: 5px;
+	margin-left: 25%;
+}
+
+#start:hover {
+	cursor: pointer;
+	background-color: white;
 }
