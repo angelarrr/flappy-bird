@@ -1,4 +1,4 @@
-var graphicsComponent = require("../components/graphics/pipe");
+var graphicsComponent = require("../components/graphics/rect");
 var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
@@ -14,7 +14,7 @@ var ScoreKeeper = function() {
 	physics.position.x = -0.25;
 	physics.position.y = 0;
 
-	var graphics = new graphicsComponent.PipeGraphicsComponent(this, size);
+	var graphics = new graphicsComponent.RectGraphicsComponent(this, size);
 	var collision = new collisionComponent.RectCollisionComponent(this, size);
 	collision.onCollision = this.onCollision.bind(this);
 

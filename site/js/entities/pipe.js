@@ -3,7 +3,6 @@ var physicsComponent = require("../components/physics/physics");
 var collisionComponent = require("../components/collision/rect");
 
 var Pipe = function (position, size) {
-	this.color = "green";
 	
 	var physics = new physicsComponent.PhysicsComponent(this);
 		physics.position = position;
