@@ -3,7 +3,6 @@ var graphicsComponent = require("../components/graphics/bird");
 var collisionComponent = require("../components/collision/circle");
 var graphicsSystem = require("../systems/graphics");
 var pipeSystem = require("../systems/pipe");
-var flappyBird = require('../flappy_bird');
 
 var Bird = function() {
 	var physics = new physicsComponent.PhysicsComponent(this);
