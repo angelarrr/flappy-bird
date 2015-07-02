@@ -8,7 +8,7 @@ var GraphicsSystem = function(entities) {
 
 GraphicsSystem.prototype.run = function() {
 	// Run the render loop
-	window.requestAnimationFrame(this.tick.bind(this));
+	this.loop = window.requestAnimationFrame(this.tick.bind(this));
 };
 
 GraphicsSystem.prototype.tick = function() {

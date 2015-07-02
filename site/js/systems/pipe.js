@@ -4,7 +4,6 @@ var settings = require('../settings');
 var PipeSystem = function(entities) {
 	this.entities = entities;
 	this.canvas = document.getElementById('main-canvas');
-	this.interval = 0;
 };
 
 PipeSystem.prototype.run = function() {

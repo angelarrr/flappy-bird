@@ -1,6 +1,9 @@
 var physicsComponent = require("../components/physics/physics");
 var graphicsComponent = require("../components/graphics/bird");
 var collisionComponent = require("../components/collision/circle");
+var graphicsSystem = require("../systems/graphics");
+var pipeSystem = require("../systems/pipe");
+var flappyBird = require('../flappy_bird');
 
 var Bird = function() {
 	var physics = new physicsComponent.PhysicsComponent(this);
@@ -8,7 +11,7 @@ var Bird = function() {
 	physics.acceleration.y = -2;
 
 	var graphics = new graphicsComponent.BirdGraphicsComponent(this);
-	var collision = new collisionComponent.CircleCollisionComponent(this, 0.035);
+	var collision = new collisionComponent.CircleCollisionComponent(this, 0.02);
 	collision.onCollision = this.onCollision.bind(this);
 
 	this.components = {
