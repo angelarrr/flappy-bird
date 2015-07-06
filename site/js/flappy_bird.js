@@ -16,6 +16,7 @@ var FlappyBird = function() {
 	this.physics = new physicsSystem.PhysicsSystem(this.entities);
 	this.inputs = new inputSystem.InputSystem(this.entities);
 	this.pipes = new pipeSystem.PipeSystem(this.entities);
+	this.pause = false;
 };
 
 FlappyBird.prototype.run = function() {
@@ -23,6 +24,28 @@ FlappyBird.prototype.run = function() {
 	this.physics.run();
 	this.inputs.run();
 	this.pipes.run();
+};
+
+FlappyBird.prototype.paused = function(restart, nextCall) {
+	this.resume = nextCall;
+	this.pause = !this.pause;
+	this.graphics.pause = this.pause;
+	this.inputs.pause = this.pause;
+	this.pipes.pause = this.pause;
+	this.graphics.pauseText = restart || 'GAME PAUSED';
+
+	if (this.resume) {
+		this.resume();
+	}
+};
+
+FlappyBird.prototype.reset = function() {
+	this.entities.splice(5, this.entities.length - 5);
+
+	var bird = this.entities[0];
+	bird.components.physics.position.y = 0.5;
+	bird.components.physics.position.x = 0;
+	bird.components.physics.velocity.y = 0;
 };
 
 exports.FlappyBird = FlappyBird;

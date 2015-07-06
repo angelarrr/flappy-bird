@@ -4,6 +4,8 @@ var GraphicsSystem = function(entities) {
 	this.canvas = document.getElementById('main-canvas');
 	// Context is what we draw to
 	this.context = this.canvas.getContext('2d');
+
+	this.pause = false;
 };
 
 GraphicsSystem.prototype.run = function() {
@@ -36,6 +38,17 @@ GraphicsSystem.prototype.tick = function() {
 	}
 
 	this.context.restore();
+
+	// pause
+	if (this.pause) {
+		this.context.save();
+		this.context.fillStyle = "black";
+		this.context.font = "bold 32px Arial";
+		this.context.textAlign = "center";
+		this.context.fillText(this.pauseText, this.canvas.width / 2, this.canvas.height / 2);
+		this.context.restore();
+	}
+
 	// Continue the render loop
 	window.requestAnimationFrame(this.tick.bind(this));
 };

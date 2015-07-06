@@ -42,7 +42,7 @@ CollisionSystem.prototype.tick = function() {
 				entityA.components.collision.onCollision(entityB);
 				// take pipes off when bird collides
 				if (entityA instanceof bird.Bird) {
-					this.entities.splice(5, this.entities.length - 5);
+				//	this.entities.splice(5, this.entities.le//ngth - 5);
 					this.scoreSystem.resetScore();
 				}
 
@@ -60,10 +60,10 @@ CollisionSystem.prototype.tick = function() {
 			if (entityB.components.collision.onCollision) {
 				entityB.components.collision.onCollision(entityA);
 				// take pipes off
-				if (entityB instanceof bird.Bird) {
-					this.entities.splice(5, this.entities.length - 5);
-					this.scoreSystem.resetScore();
-				}
+				//if (entityB instanceof bird.Bird) {
+				//	this.entities.splice(5, this.entities.le//ngth - 5);
+				//	this.scoreSystem.resetScore();
+				//}
 			}
 		}
 	}

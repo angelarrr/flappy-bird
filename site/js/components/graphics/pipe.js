@@ -4,7 +4,7 @@ var PipeGraphicsComponent = function(entity, size) {
 };
 
 var isEven = function(value) {
-	if (value % 2 ==0) {
+	if (value % 2 == 0) {
 		return true;
 	} else {
 		return false;

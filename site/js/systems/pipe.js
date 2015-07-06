@@ -4,6 +4,8 @@ var settings = require('../settings');
 var PipeSystem = function(entities) {
 	this.entities = entities;
 	this.canvas = document.getElementById('main-canvas');
+	this.interval = 0;
+	this.pause = false;
 };
 
 PipeSystem.prototype.run = function() {
@@ -11,6 +13,11 @@ PipeSystem.prototype.run = function() {
 };
 
 PipeSystem.prototype.tick = function(){
+
+	if (this.pause) {
+		return;
+	}
+
 	var right = 0.5 * this.canvas.width / this.canvas.height;
 	var gapPos = 0.4 + Math.random() * 0.2;
 
