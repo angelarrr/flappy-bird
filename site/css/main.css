@@ -475,10 +475,6 @@ h1 {
 	background-color: white;
 }
 
-.hidden {
-	visibility: hidden;
-}
-
 .noselect {
   -webkit-touch-callout: none;
   -webkit-user-select: none;

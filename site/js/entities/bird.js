@@ -21,9 +21,9 @@ var Bird = function() {
 };
 
 Bird.prototype.onCollision = function(entity) {
-	window.flappy.paused("Game Over", (function () {
+	//window.flappy.paused("Game Over", (function () {
         window.flappy.reset();
-    }).bind(this));
+   // }).bind(this));
 };
 
 exports.Bird = Bird;

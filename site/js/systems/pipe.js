@@ -9,7 +9,7 @@ var PipeSystem = function(entities) {
 };
 
 PipeSystem.prototype.run = function() {
-	window.setInterval(this.tick.bind(this), 2000);
+	this.interval = window.setInterval(this.tick.bind(this), 2000);
 };
 
 PipeSystem.prototype.tick = function(){

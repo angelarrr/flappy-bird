@@ -10,7 +10,7 @@ var GraphicsSystem = function(entities) {
 
 GraphicsSystem.prototype.run = function() {
 	// Run the render loop
-	this.loop = window.requestAnimationFrame(this.tick.bind(this));
+	window.requestAnimationFrame(this.tick.bind(this));
 };
 
 GraphicsSystem.prototype.tick = function() {
@@ -43,7 +43,7 @@ GraphicsSystem.prototype.tick = function() {
 	if (this.pause) {
 		this.context.save();
 		this.context.fillStyle = "black";
-		this.context.font = "bold 32px Arial";
+		this.context.font = "bold 48px Arial";
 		this.context.textAlign = "center";
 		this.context.fillText(this.pauseText, this.canvas.width / 2, this.canvas.height / 2);
 		this.context.restore();

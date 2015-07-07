@@ -12,6 +12,7 @@ PhysicsSystem.prototype.run = function() {
 };
 
 PhysicsSystem.prototype.tick = function() {
+
 	if (!this.pause) {
 		for (var i=0; i<this.entities.length; i++) {
 			var entity = this.entities[i];
@@ -22,6 +23,8 @@ PhysicsSystem.prototype.tick = function() {
 		}
 
 		this.collisionSystem.tick();
+	} else {
+		return;
 	}
 
 };

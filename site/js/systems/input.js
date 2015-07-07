@@ -8,7 +8,7 @@ var InputSystem = function(entities) {
 InputSystem.prototype.run = function() {
 	this.canvas.addEventListener('click', this.onClick.bind(this));
 	this.canvas.addEventListener('touchstart', this.onTouch.bind(this));
-	window.addEventListener('keydown', this.onSpace.bind(this));
+	// window.addEventListener('keydown', this.onSpace.bind(this));
 };
 
 InputSystem.prototype.onClick = function() {
@@ -26,13 +26,10 @@ InputSystem.prototype.onTouch = function(event) {
 	bird.components.physics.velocity.y = 0.8;
 };
 
-InputSystem.prototype.onSpace = function(e) {
-	// if (e.keyCode == 32) {
-	// 	alert("PAUSE");
-	// }
-	switch(e.keyCode) {
-		case 32: window.flappy.paused();
-	}
-};
+// InputSystem.prototype.onSpace = function(e) {
+//	switch(e.keyCode) {
+//		case 32: window.flappy.paused();
+//	}
+//};
 
 exports.InputSystem = InputSystem;

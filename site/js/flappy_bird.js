@@ -26,18 +26,20 @@ FlappyBird.prototype.run = function() {
 	this.pipes.run();
 };
 
-FlappyBird.prototype.paused = function(restart, nextCall) {
-	this.resume = nextCall;
-	this.pause = !this.pause;
-	this.graphics.pause = this.pause;
-	this.inputs.pause = this.pause;
-	this.pipes.pause = this.pause;
-	this.graphics.pauseText = restart || 'GAME PAUSED';
-
-	if (this.resume) {
-		this.resume();
-	}
-};
+//FlappyBird.prototype.paused = function(restart, nextCall) {
+//	if (this.resume) {
+//		this.resume();
+//	}
+//
+//	this.resume = nextCall;
+//	this.pause = !this.pause;
+//	this.graphics.pause = this.pause;
+//	this.inputs.pause = this.pause;
+//	this.pipes.pause = this.pause;
+//	this.graphics.pauseText = restart || 'GAME PAUSED';
+//
+//	console.log("pause");
+//};
 
 FlappyBird.prototype.reset = function() {
 	this.entities.splice(5, this.entities.length - 5);
