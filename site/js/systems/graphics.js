@@ -40,14 +40,14 @@ GraphicsSystem.prototype.tick = function() {
 	this.context.restore();
 
 	// pause
-	if (this.pause) {
-		this.context.save();
-		this.context.fillStyle = "black";
-		this.context.font = "bold 48px Arial";
-		this.context.textAlign = "center";
-		this.context.fillText(this.pauseText, this.canvas.width / 2, this.canvas.height / 2);
-		this.context.restore();
-	}
+	//if (this.pause) {
+	//	this.context.save();
+	//	this.context.fillStyle = "black";
+	//	this.context.font = "bold 48px Arial";
+	//	this.context.textAlign = "center";
+	//	this.context.fillText(this.pauseText, this.canvas.width / 2, //this.canvas.height / 2);
+	//	this.context.restore();
+	//}
 
 	// Continue the render loop
 	window.requestAnimationFrame(this.tick.bind(this));

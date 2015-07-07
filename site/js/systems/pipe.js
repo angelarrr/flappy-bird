@@ -14,9 +14,9 @@ PipeSystem.prototype.run = function() {
 
 PipeSystem.prototype.tick = function(){
 
-	if (this.pause) {
-		return;
-	}
+	// if (this.pause) {
+	// 	return;
+	// }
 
 	var right = 0.5 * this.canvas.width / this.canvas.height;
 	var gapPos = 0.4 + Math.random() * 0.2;

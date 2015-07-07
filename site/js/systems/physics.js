@@ -13,20 +13,15 @@ PhysicsSystem.prototype.run = function() {
 
 PhysicsSystem.prototype.tick = function() {
 
-	if (!this.pause) {
-		for (var i=0; i<this.entities.length; i++) {
-			var entity = this.entities[i];
-			if (!'physics' in entity.components) {
-			continue;
-			}
-		entity.components.physics.update(1/60);
+	for (var i=0; i<this.entities.length; i++) {
+		var entity = this.entities[i];
+		if (!'physics' in entity.components) {
+		continue;
 		}
-
-		this.collisionSystem.tick();
-	} else {
-		return;
+		entity.components.physics.update(1/60);
 	}
 
+	this.collisionSystem.tick();
 };
 
 exports.PhysicsSystem = PhysicsSystem;

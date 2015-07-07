@@ -12,9 +12,9 @@ InputSystem.prototype.run = function() {
 };
 
 InputSystem.prototype.onClick = function() {
-	if (this.pause) {
-		window.flappy.paused();
-	}
+	// if (this.pause) {
+	// 	window.flappy.paused();
+	// }
 
 	var bird = this.entities[0];
 	bird.components.physics.velocity.y = 0.8;
